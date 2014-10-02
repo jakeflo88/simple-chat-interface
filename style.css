@@ -1,0 +1,81 @@
+/*
+Styles for index.html
+"Simple Chat Interface"
+
+Author: Jake Florian
+Date: 10/1/2014
+
+Filename: style.css
+*/
+
+
+/* Styles for the main div wrap */
+
+#everything {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+
+	background-color: orange;
+}
+
+
+/* Styles for the heading */
+
+#everything h1 {
+	font-size: 1.5em;
+	font-family: Impact;
+	text-decoration: underline;
+
+	border: 1px solid black;
+	background-color: white;
+}
+
+/* Styles for the message box */
+
+#messages {
+	width: 50%;
+	height: 100%;
+
+	text-align: right;
+	font-size: 2em;
+
+	border: 2px solid black;
+	background-color: #1BE39D;
+	display: block;
+	margin: 0 auto;
+}
+
+
+/* Styles for the messages */
+
+#messages p {
+	font-size: 1.5em;
+	font-family: Verdana;
+
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+
+/* Styles for the input div */
+
+#input {
+	width: 100%;
+
+	text-align: ;
+	font-size: 1.5em;
+
+	border: 2px solid black;
+	background-color: yellow;
+}
+
+
+/* Styles for the input box */
+
+#input input {
+	width: 50%;
+	height: 1.5em;
+	font-size: 1.5em;
+	font-family: Impact;
+	background-color: green;
+}

@@ -22,10 +22,29 @@
 	</head>
 
 	<body>
-		<div id="everything">
-			<h1>Mint Chat</h1>
-		</div>
 
+		<!-- Div to hold everything -->
+		<div id="everything">
+
+			<!-- Heading for the page -->
+			<h1>Mint Chat</h1>
+
+			<!-- Div for posted messages -->
+			<div id="messages">
+				<!-- Messages will show up here -->
+				<p>TEST</p>
+			</div>
+
+			<!-- Div for posting messages -->
+			<div id="input">
+				<form>
+					Type to chat: <input type="text" name="chat" id="userMessage">
+					<button type="submit" onclick="sendMessage()">Send</button>
+				</form>
+			</div>
+
+		</div>
+		<script src="script.js" type="text/javascript"></script>
 	</body>
 
 
