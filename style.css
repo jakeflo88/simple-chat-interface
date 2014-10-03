@@ -16,45 +16,61 @@ Filename: style.css
 	height: 100%;
 	text-align: center;
 
-	background-color: orange;
+	border: 10px solid black;
+
+	background-color: #000080;
 }
 
 
 /* Styles for the heading */
 
 #everything h1 {
-	font-size: 1.5em;
+	height: 100%;
+
+	font-size: 36px;
 	font-family: Impact;
 	text-decoration: underline;
 
-	border: 1px solid black;
-	background-color: white;
+	border: 10px solid gray;
+	background-color: #000033;
+	color: white;
 }
 
 /* Styles for the message box */
 
 #messages {
-	width: 50%;
-	height: 100%;
-
+	width: 70%;
+	height: 350px;
+	
 	text-align: right;
 	font-size: 2em;
 
 	border: 2px solid black;
-	background-color: #1BE39D;
+	border-radius: 25px;
+
+	color: white;
+	background-color: #8080FF;
+
 	display: block;
 	margin: 0 auto;
+
+	overflow: auto;
 }
 
 
 /* Styles for the messages */
 
 #messages p {
-	font-size: 1.5em;
-	font-family: Verdana;
+	width: 90%;
 
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
+	background-color: black;
+
+	font-size: 0.4em;
+	font-family: Verdana;
+	word-wrap: break-word;
+
+	border: 1px solid #0000FF;
+	margin: 10px 20px 10px 20px;
 }
 
 /* Styles for the input div */
@@ -62,20 +78,41 @@ Filename: style.css
 #input {
 	width: 100%;
 
-	text-align: ;
+	text-align: center; ;
 	font-size: 1.5em;
 
 	border: 2px solid black;
-	background-color: yellow;
+
+	color: white;
+	background-color: #0000FF;
+
+	margin: 40px 0px 0px 0px;
 }
 
 
 /* Styles for the input box */
 
-#input input {
-	width: 50%;
-	height: 1.5em;
-	font-size: 1.5em;
+#userMessage {
+	height: 100px;
+
+	font-size: 14px;
 	font-family: Impact;
-	background-color: green;
+
+	margin-top: 10px;
+}
+
+
+/* Styles for the button */
+
+#send {
+	height: 4em;
+	width: 8em;
+
+	font-size: 0.8em;
+
+	border-radius: 25px;
+
+	background-color: #99FF99;
+
+	margin: 10px 10px 10px 10px;
 }
