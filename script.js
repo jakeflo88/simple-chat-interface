@@ -14,10 +14,17 @@ function addMessage() {
 		nick = text.substring(6);
 		text = ("Name changed to: '" + nick + "'");
 
-		var post = document.createElement("P");
-		var content = document.createTextNode(text);
-		post.appendChild(content);
-		document.getElementById("messages").appendChild(post);
+
+		var nameChangeInsert = document.createElement("DIV");
+
+		var nameChange = document.createElement("DIV");
+		nameChange.appendChild(document.createTextNode(text));
+		nameChange.setAttribute("id", "changeId");
+
+		nameChangeInsert.appendChild(nameChange);
+
+		document.getElementById("messages").appendChild(nameChangeInsert);
+		
 		return;
 	}
 	
@@ -28,10 +35,20 @@ function addMessage() {
 
 	//for regular messages
 	else {
-		var post2 = document.createElement("P");
-		var content2 = document.createTextNode(nick + " says: " + text);
-		post2.appendChild(content2);
-		document.getElementById("messages").appendChild(post2);
+		var newPost = document.createElement("DIV");
+
+		var namePost = document.createElement("DIV");
+		namePost.appendChild(document.createTextNode(nick + " says:"));
+		namePost.setAttribute("id", "nameId");
+
+		var chatPost = document.createElement("P");
+		chatPost.appendChild(document.createTextNode(text));
+		chatPost.setAttribute("id", "chatId");
+
+		newPost.appendChild(namePost);
+		newPost.appendChild(chatPost);
+
+		document.getElementById("messages").appendChild(newPost);
 	}
 
 	//for autoscroll to the bottom
