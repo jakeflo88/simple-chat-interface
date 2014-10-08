@@ -57,42 +57,6 @@ Filename: style.css
 	overflow: auto;
 }
 
-/* Styles for new post names */
-
-#nameId {
-	color: black;
-
-	font-family: Impact;
-
-	margin-left: 35px;
-}
-
-/* Styles for new post chat */
-
-#chatId {
-	color: white;
-
-	text-align: right;
-}
-
-/* Styles for name changes */
-
-#changeId {
-	width: 50%;
-
-	background-color: white;
-	color:red;
-
-	text-align: center;
-	font-size: 0.9em;
-	font-family: Impact;
-	word-wrap: break-word;
-
-	border: 5px solid #66FF66;
-	margin: 0 auto;
-}
-
-
 /* Styles for the messages */
 
 #messages p {
@@ -151,4 +115,43 @@ Filename: style.css
 	background-color: #99FF99;
 
 	margin: 10px 10px 10px 10px;
+}
+
+
+
+/*Styles for new elements from JS */
+
+/* Styles for new post names */
+
+#nameId {
+	color: #66FF66;
+
+	font-family: Trebuchet, sans-serif;
+
+	margin-left: 35px;
+}
+
+/* Styles for new post chat */
+
+#chatId {
+	color: white;
+
+	text-align: right;
+}
+
+/* Styles for name changes */
+
+#changeId {
+	width: 50%;
+
+	background-color: white;
+	color:red;
+
+	text-align: center;
+	font-size: 0.9em;
+	font-family: Impact;
+	word-wrap: break-word;
+
+	border: 5px solid #66FF66;
+	margin: 0 auto;
 }

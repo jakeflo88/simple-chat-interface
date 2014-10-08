@@ -1,12 +1,23 @@
 //default name
 var nick = "Anonymous";
 
+
+//to make the enter button work
+document.getElementById("userMessage").addEventListener('keyup',function(event){
+	if (event.keyCode === 13){
+		//run the msg function
+		addMessage();
+	}
+});
+
+
+
 //function for posting messages
 function addMessage() {
 	
 	//get the message and clear the textarea
 	var text = document.getElementById("userMessage").value;
-	document.getElementById("userMessage").value = "";
+	document.getElementById("userMessage").value = null;
 	document.getElementById("userMessage").focus();
 
 	//check for nick command
