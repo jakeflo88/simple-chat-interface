@@ -9,6 +9,19 @@ Filename: style.css
 */
 
 
+
+/* Styles for the body */
+
+body {
+	min-height: 100%;
+
+	padding: 0;
+	margin: 0;
+	bottom: 0;
+}
+
+
+
 /* Styles for the main div wrap */
 
 #everything {
@@ -16,45 +29,70 @@ Filename: style.css
 	height: 100%;
 	text-align: center;
 
-	border: 10px solid black;
+	border: 5px solid black;
+	border-radius: 25px;
 
-	background-color: #000080;
+	background-color: #66C266;
 }
 
 
 /* Styles for the heading */
 
 #everything h1 {
+	width: 90%;
 	height: 100%;
 
 	font-size: 36px;
 	font-family: Impact;
-	text-decoration: underline;
+	text-shadow: 2px 3px black;
 
-	border: 10px solid gray;
-	background-color: #000033;
-	color: white;
+	border: 10px solid #296614;
+	border-radius: 25px; 
+
+	background-color: #E6FFE6;
+	color: #00FF00;
+
+	margin: 0 auto;
+	margin-bottom: 20px;
+	margin-top: 10px;
 }
 
 /* Styles for the message box */
 
 #messages {
 	width: 70%;
-	height: 350px;
+	height: 400px;
 	
-	text-align: left;
 	font-size: 1em;
 
 	border: 2px solid black;
 	border-radius: 25px;
 
 	color: white;
-	background-color: #8080FF;
+	background-color: #E6FFE6;
 
 	display: block;
 	margin: 0 auto;
+	margin-bottom: 20px;
 
 	overflow: auto;
+}
+
+/* Styles for the nav bar */
+
+.navbar div{
+	width: 70%;
+
+	text-align: center;
+	
+	margin: 0 auto;
+}
+
+.navbar button {
+
+	width: 10%;
+	display: inline-block;
+	margin: 0 auto;
 }
 
 /* Styles for the messages */
@@ -62,61 +100,70 @@ Filename: style.css
 #messages p {
 	width: 90%;
 
-	background-color: black;
+	background-color: #99D699;
 
-	text-align: right;
+	text-align: center;
 	font-size: 0.8em;
 	font-family: Verdana;
 	word-wrap: break-word;
 
 	border: 1px solid #0000FF;
+	border-radius: 10px;
 	margin: 10px 20px 10px 20px;
 }
 
 /* Styles for the input div */
 
 #input {
-	width: 100%;
+	width: 70%;
+	height: 40%;
 
 	text-align: center; ;
 	font-size: 1.5em;
 
-	border: 2px solid black;
-
 	color: white;
-	background-color: #0000FF;
+	background-color: #296614;
 
-	margin: 40px 0px 0px 0px;
+	border-radius: 25px;
+
+	margin: 0 auto;
+	margin-bottom: 10px;
+	bottom: 0;
 }
 
 
 /* Styles for the input box */
 
 #userMessage {
-	height: 100px;
-
 	font-size: 14px;
 	font-family: Impact;
 
+	border-radius: 5px;
+
 	margin-top: 10px;
+	clear: both;
 }
 
 
 /* Styles for the button */
 
 #send {
-	height: 4em;
-	width: 8em;
+	height: 2em;
+	width: 4em;
+	vertical-align: middle;
 
-	font-size: 0.8em;
+	font-size: 0.7em;
+	text-shadow: 2px 2px white;
 
 	border-radius: 25px;
 
-	background-color: #99FF99;
+	background-color: #00FF00;
 
-	margin: 10px 10px 10px 10px;
+	margin: 0 auto;
+
+	position: relative;
+	bottom: 40px;
 }
-
 
 
 /*Styles for new elements from JS */
@@ -124,9 +171,10 @@ Filename: style.css
 /* Styles for new post names */
 
 #nameId {
-	color: #66FF66;
+	color: #004C00;
 
 	font-family: Trebuchet, sans-serif;
+	font-size: 12px;
 
 	margin-left: 35px;
 }
@@ -134,9 +182,9 @@ Filename: style.css
 /* Styles for new post chat */
 
 #chatId {
-	color: white;
+	color: black;
 
-	text-align: right;
+	text-align: center;
 }
 
 /* Styles for name changes */
@@ -153,5 +201,6 @@ Filename: style.css
 	word-wrap: break-word;
 
 	border: 5px solid #66FF66;
+	border-radius: 25px;
 	margin: 0 auto;
 }

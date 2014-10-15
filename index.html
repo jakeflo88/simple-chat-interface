@@ -27,27 +27,50 @@
 		<div id="everything">
 
 			<!-- Heading for the page -->
-			<h1>Mint Chat</h1>
+			<h1>Mynt Chat</h1>
 
 			<!-- Div for posted messages -->
 			<div id="messages">
-				<p style="color:#66FF66; text-align:center">
-				Welcome to Mint Chat, the mintest chat available online! To begin chat, use the box below. To change your name type "/nick" followed by your name.
+				<div class="navbar">
+					<button id="a">A</button>
+					<button id="b">B</button>
+					<button id="c">C</button>
+					<button id="d">D</button>
+					<button id="e">E</button>
+					<button id="f">F</button>
+					<button id="g">G</button>
+					<button id="h">H</button>
+				</div>
+
+				<!-- Welcome message -->
+				<p style="color:#66FF66; text-align:center; background-color:black">
+				Welcome to Mynt Chat, the myrntest chat available online!
 				</p>
+
 				<!-- Messages will show up here -->
 			</div>
+
+			<!--Connection status -->
+
 
 			<!-- Div for posting messages -->
 			<div id="input">
 				<!-- Chat input box -->
 				<form>
-					<textarea name="chat" placeholder="Type here to chat..." rows="4"columns="140" style="width: 400px"; height: "150px"; id="userMessage" autofocus="autofocus"></textarea>
-				</form>
-				<!-- Send button -->
+					<textarea name="chat" placeholder="Type here to chat..." rows="4"columns="140" style="width: 400px; height: 100px"; id="userMessage" autofocus="autofocus"></textarea>
+					<!-- Send button -->
 				<button type="button" onclick="addMessage()" id="send">Send</button>
+				</form>
+				
 			</div>
 
 		</div>
+		<!-- Script for socket.io from online -->
+		<script src="/socket.io/socket.io.js"></script>
+			<script>
+  				io.connect("/");
+  				var socket = io();
+			</script>
 		<!-- Include my script -->
 		<script src="script.js" type="text/javascript"></script>
 	</body>

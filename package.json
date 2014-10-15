@@ -1,0 +1,24 @@
+{
+  "name": "simple-chat-interface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakeflo88/simple-chat-interface.git"
+  },
+  "author": "Jake Florian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakeflo88/simple-chat-interface/issues"
+  },
+  "homepage": "https://github.com/jakeflo88/simple-chat-interface",
+  "dependencies": {
+    "express": "^4.9.6",
+    "socket.io": "^1.1.0"
+  }
+}
