@@ -10,8 +10,31 @@ var post = [nick];
 socket.emit('signin', nick);
 
 
-//to make the enter button work
+
+//for key navigation
+
+//array to correspond with element ids
+var navActive = ["a","b","c","d","e","f","g","h"];
+
+//first element is selected by default
+var selection = navActive[0];
+//identify selection value as element id
+var selActive = document.getElementById(selection);
+//change selected default element id to active
+selActive.setAttribute("id", "active");
+
+
+
+//for text strength
+var strength = ["strength1","strength2","strength3","strength4","strength5"
+				,"strength6","strength7","strength8","strength9","strength10"];
+
+var strengthValue = strength[0];
+
+//event listeners for special key commands
 document.getElementById("userMessage").addEventListener('keyup',function(event){
+	
+	//for using enter to send messages
 	if (event.keyCode === 13){
 		//prevent null chat messages
 		var preventNull = document.getElementById('userMessage').value;
@@ -20,6 +43,86 @@ document.getElementById("userMessage").addEventListener('keyup',function(event){
 
 		//run the msg function
 		addMessage();
+	}
+
+	//for keystroke navigation for convo columns left
+	if (event.shiftKey && event.keyCode == 39){
+		//search array to find which is selected
+		for (var i = 0; i < navActive.length; i++) {
+			//to store the current value
+			var checkLeft = navActive[i];
+
+			//so that it does not run when it's at the left edge
+			if (i < navActive.length -1) {
+				
+				//when the loop has found the active column
+				if(checkLeft === selection) {
+					//set active column back to original id
+					selActive.setAttribute("id", selection);
+				
+					//new value to move to
+					var stepLeft = i + 1;
+					
+					//set selection to new value	
+					selection = navActive[stepLeft];
+					//identify new value as element id
+					selActive = document.getElementById(selection);
+					//change the newly selected element id to active
+					selActive.setAttribute("id", "active");
+					//exit the loop
+					{break}
+					
+				}
+			}
+		}
+	}
+
+	//for keystroke navigation through convo columns right
+	if (event.shiftKey && event.keyCode == 37){
+		//search array to find which is selected
+		for (var i = 0; i < navActive.length; i++) {
+			//to store the current value
+			var checkRight = navActive[i];
+
+			//so that it does run when it's at the right edge
+			if (i > 0) {
+				
+				//when loop has found the active column
+				if(checkRight === selection) {
+					//set active column back to original id
+					selActive.setAttribute("id", selection);
+				
+					//new value to move to
+					var stepRight = i - 1;
+
+					//set selection to new value
+					selection = navActive[stepRight];
+					//identify new value as element id
+					selActive = document.getElementById(selection);
+					//change the newly selected element id to active
+					selActive.setAttribute("id", "active");
+					//exit the loop
+					{break}
+					
+				}
+			}
+		}
+	}
+
+	//for setting the strength value
+	if (event.shiftKey && event.keyCode == 38) {
+		for (var i = 0; i < strength.length; i++) {
+			var checkUp = strength[i];
+			console.log("check in" + i);
+			if (i < strength.length -1) {
+				if(checkUp === strengthValue) {
+					var stepUp = i + 1;
+					console.log("check out");
+					strengthValue = strength[stepUp];
+					{break}
+				}
+			}
+		}
 	}
 });
 
@@ -96,7 +199,8 @@ function addMessage() {
 			//creating the chat element and giving ID
 			var chatPost = document.createElement("P");
 			chatPost.appendChild(document.createTextNode(post[2]));
-			chatPost.setAttribute("id", "chatId");
+			//set it to the strength value
+			chatPost.setAttribute("id", strengthValue);
 
 			//appending both to the post element
 			newPost.appendChild(namePost);
@@ -108,6 +212,9 @@ function addMessage() {
 			//for autoscroll to the bottom
 			var messageLog2 = document.getElementById("messages");
 			messageLog2.scrollTop = messageLog2.scrollHeight;
+
+			//reset strength value
+			strengthValue = strength[0];
 
 			return;
 		}

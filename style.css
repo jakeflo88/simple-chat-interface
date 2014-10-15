@@ -95,12 +95,17 @@ body {
 	margin: 0 auto;
 }
 
+/* Styles for navbar navigation from js */
+
+#active {
+	background-color: #296614;
+	color: white;
+}
+
 /* Styles for the messages */
 
 #messages p {
 	width: 90%;
-
-	background-color: #99D699;
 
 	text-align: center;
 	font-size: 0.8em;
@@ -108,7 +113,7 @@ body {
 	word-wrap: break-word;
 
 	border: 1px solid #0000FF;
-	border-radius: 10px;
+	border-radius: 5px;
 	margin: 10px 20px 10px 20px;
 }
 
@@ -124,10 +129,10 @@ body {
 	color: white;
 	background-color: #296614;
 
-	border-radius: 25px;
+	border-radius: 5px;
 
 	margin: 0 auto;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	bottom: 0;
 }
 
@@ -168,25 +173,6 @@ body {
 
 /*Styles for new elements from JS */
 
-/* Styles for new post names */
-
-#nameId {
-	color: #004C00;
-
-	font-family: Trebuchet, sans-serif;
-	font-size: 12px;
-
-	margin-left: 35px;
-}
-
-/* Styles for new post chat */
-
-#chatId {
-	color: black;
-
-	text-align: center;
-}
-
 /* Styles for name changes */
 
 #changeId {
@@ -203,4 +189,63 @@ body {
 	border: 5px solid #66FF66;
 	border-radius: 25px;
 	margin: 0 auto;
+}
+
+/* Styles for new post names */
+
+#nameId {
+	color: #004C00;
+
+	text-align: left;
+
+	font-family: Trebuchet, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+
+	margin-left: 35px;
+}
+
+
+/* Styles for different strengths */
+
+#strength1 {
+	color: black;
+	background-color: #94FF70;
+}
+
+#strength2 {
+	color: black;
+	background-color: #85FF5C;
+}
+#strength3 {
+	color: black;
+	background-color: #75FF47;
+}
+#strength4 {
+	color: black;
+	background-color: #66FF33;
+}
+#strength5 {
+	color: black;
+	background-color: #5CE62E;
+}
+#strength6 {
+	color: white;
+	background-color: #52CC29;
+}
+#strength7 {
+	color: white;
+	background-color: #47B224;
+}
+#strength8 {
+	color: white;
+	background-color: #3D991F;
+}
+#strength9 {
+	color: white;
+	background-color: #33801A;
+}
+#strength10 {
+	color: white;
+	background-color: #296614;
 }
