@@ -29,7 +29,16 @@ selActive.setAttribute("id", "active");
 var strength = ["strength1","strength2","strength3","strength4","strength5"
 				,"strength6","strength7","strength8","strength9","strength10"];
 
+var bar = ["S1","S2","S3","S4","S5","S6","S7","S8","S9","S10"];
+
 var strengthValue = strength[0];
+
+var barValue = bar[0];
+var barActive = document.getElementById(barValue);
+barActive.setAttribute("id", strengthValue);
+
+
+
 
 //event listeners for special key commands
 document.getElementById("userMessage").addEventListener('keyup',function(event){
@@ -50,21 +59,21 @@ document.getElementById("userMessage").addEventListener('keyup',function(event){
 		//search array to find which is selected
 		for (var i = 0; i < navActive.length; i++) {
 			//to store the current value
-			var checkLeft = navActive[i];
+			var checkRight = navActive[i];
 
 			//so that it does not run when it's at the left edge
 			if (i < navActive.length -1) {
 				
 				//when the loop has found the active column
-				if(checkLeft === selection) {
+				if(checkRight === selection) {
 					//set active column back to original id
 					selActive.setAttribute("id", selection);
 				
 					//new value to move to
-					var stepLeft = i + 1;
+					var stepRight = i + 1;
 					
 					//set selection to new value	
-					selection = navActive[stepLeft];
+					selection = navActive[stepRight];
 					//identify new value as element id
 					selActive = document.getElementById(selection);
 					//change the newly selected element id to active
@@ -82,21 +91,21 @@ document.getElementById("userMessage").addEventListener('keyup',function(event){
 		//search array to find which is selected
 		for (var i = 0; i < navActive.length; i++) {
 			//to store the current value
-			var checkRight = navActive[i];
+			var checkLeft = navActive[i];
 
 			//so that it does run when it's at the right edge
 			if (i > 0) {
 				
 				//when loop has found the active column
-				if(checkRight === selection) {
+				if(checkLeft === selection) {
 					//set active column back to original id
 					selActive.setAttribute("id", selection);
 				
 					//new value to move to
-					var stepRight = i - 1;
+					var stepLeft = i - 1;
 
 					//set selection to new value
-					selection = navActive[stepRight];
+					selection = navActive[stepLeft];
 					//identify new value as element id
 					selActive = document.getElementById(selection);
 					//change the newly selected element id to active
@@ -109,18 +118,48 @@ document.getElementById("userMessage").addEventListener('keyup',function(event){
 		}
 	}
 
-	//for setting the strength value
+});
+
+document.getElementById("userMessage").addEventListener('keydown',function(event) {
+	//for setting the strength bar up
 	if (event.shiftKey && event.keyCode == 38) {
 		for (var i = 0; i < strength.length; i++) {
 			var checkUp = strength[i];
-			console.log("check in" + i);
 			if (i < strength.length -1) {
 				if(checkUp === strengthValue) {
 					var stepUp = i + 1;
-					console.log("check out");
+
 					strengthValue = strength[stepUp];
+					barValue = bar[stepUp];
+
+					barActive = document.getElementById(barValue);
+					barActive.setAttribute("id", strengthValue);
 					{break}
 				}
+			}
+		}
+	}
+
+	//for dialing the strength bar back down
+	if (event.shiftKey && event.keyCode == 40) {
+
+		//loop through to clear all
+		for (var i = 0; i < strength.length; i++) { 
+			//using try catch to avoid getting a null at the end of loop
+			//this might not be the best way, but it works for now
+			try {
+				//for every element that has been changed
+				barActive = document.getElementById(strength[i]);
+				//change it's id back to what it was
+				barActive.setAttribute("id", bar[i]);
+			}
+			catch (err){
+				//resets all the values back to the way they started
+				//doing so allows the bar to be filled up again
+				strengthValue = strength[0];
+				barValue = bar[0];
+				barActive = document.getElementById(barValue);
+				barActive.setAttribute("id", strengthValue);
 			}
 		}
 	}
@@ -214,7 +253,7 @@ function addMessage() {
 			messageLog2.scrollTop = messageLog2.scrollHeight;
 
 			//reset strength value
-			strengthValue = strength[0];
+			
 
 			return;
 		}

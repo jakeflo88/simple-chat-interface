@@ -36,6 +36,37 @@ body {
 }
 
 
+/*Styles for the strength bar */
+
+.strengthBar {
+	height: 400px;
+	width: 9%;
+
+	list-style-type: none;
+
+	margin-top: 20%;
+	margin-right: 3%;
+
+	position: absolute;
+	right: 0;
+}
+
+/* Styles for strength bar li */
+
+li {
+	height: 10%;
+	
+	width: 100%;
+
+	text-align: center;
+
+	background-color: #E6FFE6;
+
+	border-top: 2px solid #296614;
+	border-radius: 10px;
+}
+
+
 /* Styles for the heading */
 
 #everything h1 {
