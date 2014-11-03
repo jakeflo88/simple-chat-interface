@@ -5,10 +5,19 @@ var guestNumber = guestName.substring(2, 6);
 
 var nick = ("Guest" + guestNumber);
 var post = [nick];
+var historyPost = [];
 
 //socket emit new user connection
 socket.emit('signin', nick);
 
+
+//getting history from redis
+//THIS IS WHERE I NEED HELP ------------------------------------------
+function getHistory() {
+	
+}
+
+getHistory();
 
 
 //for key navigation
@@ -215,17 +224,15 @@ function addMessage() {
 		post[0] = nick;
 		post[1] = nick;
 		post[2] = text;
+		post[3] = strengthValue
 
 		//taking the new post and sending to server
 		socket.emit('chat message', post);
 	}
 }
 
-	//listening for messages
-	socket.on('chat message', function(post){
-		//adding the messages to the page
-
-		//for chat posts
+function showMessage() {
+	//for chat posts
 		if(post[0] === post[1]){
 			//creating an element to post
 			var newPost = document.createElement("DIV");
@@ -239,7 +246,7 @@ function addMessage() {
 			var chatPost = document.createElement("P");
 			chatPost.appendChild(document.createTextNode(post[2]));
 			//set it to the strength value
-			chatPost.setAttribute("id", strengthValue);
+			chatPost.setAttribute("id", post[3]);
 
 			//appending both to the post element
 			newPost.appendChild(namePost);
@@ -275,7 +282,16 @@ function addMessage() {
 		//for autoscroll to the bottom
 		var messageLog3 = document.getElementById("messages");
 		messageLog3.scrollTop = messageLog3.scrollHeight;
-});
+}
+
+
+	//listening for messages
+	socket.on('chat message', function(post){
+		//adding the messages to the page
+		showMessage();
+	});
+
+		
 
 socket.on('signedin', function(nick){
 
